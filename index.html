@@ -111,6 +111,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .game-row h4{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.005em;line-height:1.1}
 .game-row p{font-size:14px;color:var(--muted);margin-top:5px;max-width:60ch;line-height:1.45}
 .games-note{font-size:13px;color:var(--muted-dim);font-family:var(--semi);font-weight:600;margin-top:14px}
+.games-single .game-row{grid-template-columns:1fr}
 
 .host{position:relative;background:var(--navy);border:1px solid var(--line);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;overflow:hidden}
 .host-photo{width:150px;height:150px;background:var(--navy-raise);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:34px;color:var(--orange);flex:none;position:relative;z-index:2;overflow:hidden}
@@ -251,15 +252,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div class="section-head">
       <div class="eyebrow">Tailgate activities</div>
       <h2>Game day, <em>game on</em></h2>
-      <p class="sub">We're keeping it loose — here's what we're planning (final lineup TBD):</p>
     </div>
-    <div class="games">
-      <div class="game-row"><div class="game-num">01</div><div><h4>Cornhole Tournament</h4><p>Bracket-style bags, bragging rights on the line.</p></div></div>
-      <div class="game-row"><div class="game-num">02</div><div><h4>QB Accuracy Challenge</h4><p>Test your arm against a target — Frank's judging.</p></div></div>
-      <div class="game-row"><div class="game-num">03</div><div><h4>Chiefs Trivia</h4><p>Quick-fire trivia with prizes for the sharpest fans in the room.</p></div></div>
-      <div class="game-row"><div class="game-num">04</div><div><h4>Photo Wall</h4><p>Grab a shot at the Arrowhead tunnel before you head out.</p></div></div>
+    <div class="games games-single">
+      <div class="game-row"><div><h4>Cornhole Tournament</h4><p>Bracket-style bags, bragging rights on the line.</p></div></div>
     </div>
-    <p class="games-note">Have a better idea for game-day fun? Tell us on the registration form.</p>
   </div>
 </section>
 
