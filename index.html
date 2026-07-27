@@ -13,6 +13,16 @@ function scrollTop(){
     window.scrollTo({top:0,behavior:'instant'});
   }
 }
+function jumpTo(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  if(window.self!==window.top){
+    var offset = el.getBoundingClientRect().top + window.pageYOffset;
+    window.parent.postMessage({type:'scrollToOffset',offset:offset},'*');
+  } else {
+    el.scrollIntoView({behavior:'smooth'});
+  }
+}
 if(window.self!==window.top){
   function sendHeight(){
     var h = document.body.offsetHeight || document.documentElement.offsetHeight;
@@ -282,7 +292,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div class="closing-cta">
       <h2>Ready to lock in your spot?</h2>
       <p>This event is exclusively for Vincue Unleashed attendees. Reserve your seat for the locker room tour, food, drinks, and games at Arrowhead Stadium.</p>
-      <a class="btn btn-orange btn-lg" href="#reserve">Reserve Your Spot ↑</a>
+      <a class="btn btn-orange btn-lg" href="#reserve" onclick="if(window.self!==window.top){event.preventDefault();jumpTo('reserve');}">Reserve Your Spot ↑</a>
     </div>
     <p class="fine">Space is limited to registered Vincue Unleashed attendees. Details subject to change — we'll email registrants with any updates ahead of the event.</p>
   </div>
