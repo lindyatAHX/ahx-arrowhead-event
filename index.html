@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An Evening at Arrowhead Stadium — Auto Hauler Exchange</title>
+<title>An Evening at Arrowhead — Auto Hauler Exchange</title>
 <script>
 // ── AUTO-RESIZE + SCROLL (postMessage to parent iframe) ──────────────────────
 function scrollTop(){
@@ -11,16 +11,6 @@ function scrollTop(){
     window.parent.postMessage({type:'scrollTop'},'*');
   } else {
     window.scrollTo({top:0,behavior:'instant'});
-  }
-}
-function jumpTo(id){
-  var el = document.getElementById(id);
-  if(!el) return;
-  if(window.self!==window.top){
-    var offset = el.getBoundingClientRect().top + window.pageYOffset;
-    window.parent.postMessage({type:'scrollToOffset',offset:offset},'*');
-  } else {
-    el.scrollIntoView({behavior:'smooth'});
   }
 }
 if(window.self!==window.top){
@@ -79,11 +69,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero .lede{margin-top:22px;max-width:56ch;font-size:17px;color:var(--muted)}
 .hero .by{margin-top:24px;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--muted)}
-.hero .by .dot{width:42px;height:42px;background:var(--navy);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--cond);font-weight:800;color:var(--orange);font-size:15px;flex:none;overflow:hidden}
-.hero .by .dot img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .by .dot{width:42px;height:42px;background:var(--navy);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--cond);font-weight:800;color:var(--orange);font-size:15px;flex:none}
 .hero .by b{color:var(--white);font-weight:600}
 .hero-cta{margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hero-cta .jump{font-family:var(--semi);font-weight:600;font-size:13.5px;color:var(--muted)}
+.hero-cta .jump{font-family:var(--semi);font-weight:600;font-size:13.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.hero-cta .jump:hover{color:var(--orange)}
 
 .info-card{position:relative;border:1px solid var(--line);background:var(--navy);padding:26px 24px 24px;overflow:hidden}
 .info-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--orange)}
@@ -121,7 +111,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .game-row h4{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.005em;line-height:1.1}
 .game-row p{font-size:14px;color:var(--muted);margin-top:5px;max-width:60ch;line-height:1.45}
 .games-note{font-size:13px;color:var(--muted-dim);font-family:var(--semi);font-weight:600;margin-top:14px}
-.games-single .game-row{grid-template-columns:1fr}
 
 .host{position:relative;background:var(--navy);border:1px solid var(--line);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;overflow:hidden}
 .host-photo{width:150px;height:150px;background:var(--navy-raise);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:34px;color:var(--orange);flex:none;position:relative;z-index:2;overflow:hidden}
@@ -133,10 +122,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .host p.bio{margin-top:14px;font-size:15px;color:var(--muted);max-width:64ch;line-height:1.55}
 
 .form-shell{background:var(--black);border:1px solid var(--line);padding:22px}
-.form-shell .hs_submit{margin-top:18px}
-.form-shell .hs-button{font-family:var(--cond);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 20px;border:none;border-radius:0;line-height:1;cursor:pointer;background:var(--orange);color:var(--white);transition:transform .1s ease,background .15s}
-.form-shell .hs-button:hover{background:var(--orange-bright)}
-.form-shell .hs-button:active{transform:translateY(1px)}
 
 .closing-cta{background:var(--navy);border:1px solid var(--line);padding:40px;text-align:center}
 .closing-cta h2{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(26px,3.2vw,34px);line-height:1;letter-spacing:-.005em}
@@ -162,24 +147,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 <section class="hero">
   <div class="type-texture"><div class="tx-inner">
-    <div class="tx-row">ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY&nbsp;</div>
-    <div class="tx-row">ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY&nbsp;</div>
-    <div class="tx-row">ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY · ARROWHEAD STADIUM · GAME DAY&nbsp;</div>
+    <div class="tx-row">ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY&nbsp;</div>
+    <div class="tx-row">ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY&nbsp;</div>
+    <div class="tx-row">ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY · ARROWHEAD · GAME DAY&nbsp;</div>
   </div></div>
   <div class="wrap hero-in">
     <div class="hero-text">
-      <div class="hero-badge"><span>VINCUE UNLEASHED 2026 · Auto Hauler Exchange</span></div>
-      <h1>An evening at Arrowhead Stadium. <em>Game day, AHX style.</em></h1>
-      <p class="lede">Join Auto Hauler Exchange during VINCUE UNLEASHED for a private locker room and stadium tour of Arrowhead Stadium, with former Kansas City Chiefs linebacker and AHX VP of Sales, Frank Zombo — followed by dinner, drinks, and a cornhole tournament. We'll bus over together from the Loews Hotel.</p>
-      <div class="by"><div class="dot"><img src="ahx-logo.png" alt="Auto Hauler Exchange"></div><span>Hosted by <b>Auto Hauler Exchange</b> · with former Kansas City Chiefs player, Frank Zombo</span></div>
+      <div class="hero-badge"><span>Vincue Unleashed 2026 · Auto Hauler Exchange</span></div>
+      <h1>An evening at Arrowhead. <em>Game day, AHX style.</em></h1>
+      <p class="lede">Join Auto Hauler Exchange during Vincue Unleashed for a private locker room and stadium tour of Arrowhead Stadium, with former Kansas City Chiefs linebacker and AHX VP of Sales, Frank Zombo — followed by dinner, drinks, and tailgate-style games. We'll bus over together from the Loews Hotel.</p>
+      <div class="by"><div class="dot">FZ</div><span>Hosted by <b>Auto Hauler Exchange</b> · with former Kansas City Chiefs player, Frank Zombo</span></div>
       <div class="hero-cta">
-        <span class="jump">See what's included ↓</span>
+        <a class="jump" href="#details">See what's included ↓</a>
       </div>
     </div>
     <div class="info-card" id="reserve">
       <div class="reserve-head">
         <div class="eyebrow" style="margin-bottom:0">Reserve your spot</div>
-        <p>Seats are limited to VINCUE UNLEASHED attendees.</p>
+        <p>Seats are limited to Vincue Unleashed attendees.</p>
       </div>
       <div class="info-row"><div class="info-k">Date</div><div class="info-v">Thursday, Oct 8</div></div>
       <div class="info-row"><div class="info-k">Bus Pickup</div><div class="info-v">5:45 PM · Loews Hotel</div></div>
@@ -207,7 +192,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 <div class="wrap">
   <div class="stats">
-    <div class="stat"><div class="n">Arrowhead <span>Stadium</span></div><div class="l">Private tour with Frank Zombo</div></div>
+    <div class="stat"><div class="n">Locker <span>Room</span></div><div class="l">Private tour with Frank Zombo</div></div>
     <div class="stat"><div class="n">Food <span>&amp;</span> Drinks</div><div class="l">Dinner and drinks at the stadium</div></div>
     <div class="stat"><div class="n">5:45 <span>PM</span></div><div class="l">Bus pickup from the Loews Hotel</div></div>
   </div>
@@ -217,7 +202,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">What to expect</div>
-      <h2>A <em>laid-back</em> game day at Arrowhead Stadium</h2>
+      <h2>A <em>laid-back</em> game day at Arrowhead</h2>
       <p class="sub">Just a stadium walkthrough, good food, and time to hang out with the AHX team.</p>
     </div>
     <div class="cards">
@@ -249,11 +234,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
     <div class="games">
       <div class="game-row"><div class="game-num">01</div><div><h4>5:45 PM — Bus Pickup</h4><p>We'll depart together from the Loews Hotel.</p></div></div>
-      <div class="game-row"><div class="game-num">02</div><div><h4>6:00 PM — Bar Opens</h4><p>Grab a drink and settle in at the Foolish Club.</p></div></div>
-      <div class="game-row"><div class="game-num">03</div><div><h4>6:15 – 7:15 PM — Guided Stadium Tour, Group One</h4><p>A private walkthrough of Arrowhead Stadium with Frank Zombo.</p></div></div>
-      <div class="game-row"><div class="game-num">04</div><div><h4>6:20 – 7:20 PM — Guided Stadium Tour, Group Two</h4><p>A private walkthrough of Arrowhead Stadium with Frank Zombo.</p></div></div>
-      <div class="game-row"><div class="game-num">05</div><div><h4>7:15 – 8:30 PM — Dinner and Cornhole Tournament</h4><p>Stadium-style dinner and a cornhole tournament at the Foolish Club.</p></div></div>
-      <div class="game-row"><div class="game-num">06</div><div><h4>8:30 PM — Bus Departs</h4><p>Back to the Loews Hotel to wrap up the evening.</p></div></div>
+      <div class="game-row"><div class="game-num">02</div><div><h4>6:00 PM — Locker Room &amp; Stadium Tour</h4><p>A private walkthrough of Arrowhead Stadium with Frank Zombo.</p></div></div>
+      <div class="game-row"><div class="game-num">03</div><div><h4>7:00 PM — Dinner, Drinks &amp; Games</h4><p>Stadium-style food and tailgate games in the Foolish Club to close out the night.</p></div></div>
+      <div class="game-row"><div class="game-num">04</div><div><h4>8:30 PM — Bus Returns</h4><p>Back to the Loews Hotel to wrap up the evening.</p></div></div>
     </div>
   </div>
 </section>
@@ -263,10 +246,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div class="section-head">
       <div class="eyebrow">Tailgate activities</div>
       <h2>Game day, <em>game on</em></h2>
+      <p class="sub">We're keeping it loose — here's what we're planning (final lineup TBD):</p>
     </div>
-    <div class="games games-single">
-      <div class="game-row"><div><h4>Cornhole Tournament</h4><p>Bracket-style bags, bragging rights on the line.</p></div></div>
+    <div class="games">
+      <div class="game-row"><div class="game-num">01</div><div><h4>Tailgate Games</h4><p>Cornhole, ladder ball, giant Jenga, and more — casual games all night.</p></div></div>
+      <div class="game-row"><div class="game-num">02</div><div><h4>QB Accuracy Challenge</h4><p>Test your arm against a target — Frank's judging.</p></div></div>
+      <div class="game-row"><div class="game-num">03</div><div><h4>Chiefs Trivia</h4><p>Quick-fire trivia with prizes for the sharpest fans in the room.</p></div></div>
+      <div class="game-row"><div class="game-num">04</div><div><h4>Photo Wall</h4><p>Grab a shot at the Arrowhead tunnel before you head out.</p></div></div>
     </div>
+    <p class="games-note">Have a better idea for game-day fun? Tell us on the registration form.</p>
   </div>
 </section>
 
@@ -282,7 +270,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div class="pk">Former Kansas City Chiefs Player</div>
         <h3>Frank Zombo</h3>
         <div class="role">VP of Sales, Auto Hauler Exchange</div>
-        <p class="bio">A Super Bowl XLV champion with the Green Bay Packers, Frank spent six seasons (2013–2018) as a linebacker for the Kansas City Chiefs before joining Auto Hauler Exchange. He knows Arrowhead Stadium inside and out — literally.</p>
+        <p class="bio">A Super Bowl XLV champion with the Green Bay Packers, Frank spent six seasons (2013–2018) as a linebacker for the Kansas City Chiefs before joining Auto Hauler Exchange. He knows Arrowhead inside and out — literally.</p>
       </div>
     </div>
   </div>
@@ -292,10 +280,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div class="wrap">
     <div class="closing-cta">
       <h2>Ready to lock in your spot?</h2>
-      <p>This event is exclusively for VINCUE UNLEASHED attendees. Reserve your seat for the locker room tour, food, drinks, and a cornhole tournament at Arrowhead Stadium.</p>
-      <a class="btn btn-orange btn-lg" href="#reserve" onclick="if(window.self!==window.top){event.preventDefault();jumpTo('reserve');}">Reserve Your Spot ↑</a>
+      <p>This event is exclusively for Vincue Unleashed attendees. Reserve your seat for the locker room tour, food, drinks, and games at Arrowhead.</p>
+      <a class="btn btn-orange btn-lg" href="#reserve">Reserve Your Spot ↑</a>
     </div>
-    <p class="fine">Space is limited to registered VINCUE UNLEASHED attendees. Details subject to change — we'll email registrants with any updates ahead of the event.</p>
+    <p class="fine">Space is limited to registered Vincue Unleashed attendees. Details subject to change — we'll email registrants with any updates ahead of the event.</p>
   </div>
 </section>
 
